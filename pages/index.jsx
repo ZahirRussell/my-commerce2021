@@ -52,7 +52,7 @@ const Home = ({products}) => {
   )
 }
 
-Here we use getStaticProps, beacause this page is not not user-specific.
+//Here we use getStaticProps, beacause this page is not not user-specific.
 export async function getStaticProps() {
   const res = await getData('product')
   return {
