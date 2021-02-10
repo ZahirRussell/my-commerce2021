@@ -123,12 +123,12 @@ export async function getServerSideProps({params: {id}}) {
 
 
 
-export async function getStaticProps({params: {id}}) {
-    const res = await getData(`product/${id}`)
-    return {
-      props: { product: res.product }, 
-    }
-}
+// export async function getStaticProps({params: {id}}) {
+//     const res = await getData(`product/${id}`)
+//     return {
+//       props: { product: res.product }, 
+//     }
+// }
 
 
 
