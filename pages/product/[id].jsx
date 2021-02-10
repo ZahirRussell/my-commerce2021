@@ -94,32 +94,32 @@ const ViewDetail = (props) => {
 
 
 
-// export async function getServerSideProps({params: {id}}) {
-//     const res = await getData(`product/${id}`)
-//     return {
-//       props: { product: res.product }, 
-//     }
-// }
+export async function getServerSideProps({params: {id}}) {
+    const res = await getData(`product/${id}`)
+    return {
+      props: { product: res.product }, 
+    }
+}
 
-//Here we use getStaticPaths , because this page also statically pre-rendering page that use dynamic routes.
+// //Here we use getStaticPaths , because this page also statically pre-rendering page that use dynamic routes.
 
-//This function gets called at build time
-export async function getStaticPaths() {
-    // Call an external API endpoint to get products
-    const res = await getData('product')
+// //This function gets called at build time
+// export async function getStaticPaths() {
+//     // Call an external API endpoint to get products
+//     const res = await getData('product')
 
-    const ids = res.products.map((product) => product._id)
+//     const ids = res.products.map((product) => product._id)
   
-    // Get the paths we want to pre-render based on products
-    const paths = ids.map((id) => ({
-      params: { id: id }
-    }))
+//     // Get the paths we want to pre-render based on products
+//     const paths = ids.map((id) => ({
+//       params: { id: id }
+//     }))
 
   
-    // We'll pre-render only these paths at build time.
-    // { fallback: false } means other routes should 404.
-    return { paths, fallback: false }
-  }
+//     // We'll pre-render only these paths at build time.
+//     // { fallback: false } means other routes should 404.
+//     return { paths, fallback: false }
+//   }
 
 
 
