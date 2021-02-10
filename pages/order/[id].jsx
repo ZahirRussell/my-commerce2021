@@ -68,19 +68,19 @@ const useStyles = makeStyles((theme) => ({
 
 const ViewDetail = ({order}) => {
   const classes = useStyles();
-   const router = useRouter()
-
+  const router = useRouter()
+  const handleRoute  = async () => {    
+    return router.push('/myOrder')
+  }
           
   return (
     <React.Fragment>
       <CssBaseline />  
       <Meta title="Invoice" description={order._id} />    
       <main className={classes.layout}>  
-        <Link href='/myOrder'>
-            <Button startIcon={<ArrowBackIcon />} variant="outlined"  size="small" color="primary" className={classes.button}>
-               Order List
-            </Button>
-        </Link>       
+      <Button onClick={handleRoute} startIcon={<ArrowBackIcon />} variant="outlined"  size="small" color="primary"className={classes.button}>
+            Order List
+        </Button>        
  
       {
       // orderDetail.orderDetail.map(order => (
